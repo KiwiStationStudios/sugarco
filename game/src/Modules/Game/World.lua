@@ -64,7 +64,7 @@ local function updateClickzones(...)
     self.clickzones["bottom"].w = (self.w - 1) * 32
 
     self.clickzones["diagonal"].x = self.w * 32
-    self.clickzones["diagonal"].y = self.w * 32
+    self.clickzones["diagonal"].y = self.h * 32
 end
 
 function World:init(assets, w, h)
@@ -101,8 +101,8 @@ function World:init(assets, w, h)
     updateClickzones(self)
 end
 
-function World:resize()
-    
+function World:cursorInsideWorld(x, y)
+    return collision.pointRect( { x = x, y = y }, { x = 32, y = 32, w = self.w * 32, h = self.h * 32 })
 end
 
 function World:draw()

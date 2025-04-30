@@ -22,11 +22,13 @@ function PlayState:draw()
 
     self.camera:attach()
         self.world:draw()
-        love.graphics.setLineWidth(3)
-            love.graphics.setColor(239 / 255, 210 / 255, 81 / 255)
-                love.graphics.rectangle("line", math.floor(mx / 32) * 32, math.floor(my / 32) * 32, 32, 32)
-            love.graphics.setColor(1, 1, 1, 1)
-        love.graphics.setLineWidth(1)
+        if self.world:cursorInsideWorld(mx, my) then
+            love.graphics.setLineWidth(3)
+                love.graphics.setColor(239 / 255, 210 / 255, 81 / 255)
+                    love.graphics.rectangle("line", math.floor(mx / 32) * 32, math.floor(my / 32) * 32, 32, 32)
+                love.graphics.setColor(1, 1, 1, 1)
+            love.graphics.setLineWidth(1)
+        end
     self.camera:detach()
 end
 
