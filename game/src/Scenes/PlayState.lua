@@ -4,7 +4,10 @@ function PlayState:enter()
     self.world = require 'game.src.Modules.Game.World'
 
     self.assets = {
-        ["walls"] = {}
+        ["walls"] = {},
+        ["machines"] = {
+            
+        },
     }
 
     self.assets.walls.image, self.assets.walls.quads = love.graphics.getQuadsFromHash("assets/images/map/walls_sheet")

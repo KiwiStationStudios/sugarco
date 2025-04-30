@@ -18,5 +18,5 @@ function love.initialize()
     end
 
     gamestate.registerEvents()
-    gamestate.switch(PlayState)
+    gamestate.switch(SpriteEditorState)
 end
