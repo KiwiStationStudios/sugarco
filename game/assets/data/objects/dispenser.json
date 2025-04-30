@@ -1,9 +1,23 @@
 {
     "id": "dispenser",
     "allowRotation": true,
-    "keyframes": [
+    "sprites": [
         {
-            
+            "id": "machine_vent",
+            "offset": {
+                "x": 0,
+                "y": 0
+            },
+            "origin": {
+                "x": 0,
+                "y": 0
+            },
+            "scale": {
+                "x": 1,
+                "y": 1
+            },
+            "color": [ 1, 1, 1, 1 ]
         }
-    ]
+    ],
+    "keyframes": []
 }

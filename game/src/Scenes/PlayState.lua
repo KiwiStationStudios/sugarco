@@ -17,8 +17,16 @@ function PlayState:enter()
 end
 
 function PlayState:draw()
+    local inside, mx, my = shove.mouseToViewport()
+    local mx, my = self.camera:worldCoords(mx, my)
+
     self.camera:attach()
         self.world:draw()
+        love.graphics.setLineWidth(3)
+            love.graphics.setColor(239 / 255, 210 / 255, 81 / 255)
+                love.graphics.rectangle("line", math.floor(mx / 32) * 32, math.floor(my / 32) * 32, 32, 32)
+            love.graphics.setColor(1, 1, 1, 1)
+        love.graphics.setLineWidth(1)
     self.camera:detach()
 end
 

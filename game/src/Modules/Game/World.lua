@@ -62,6 +62,9 @@ local function updateClickzones(...)
     self.clickzones["bottom"].x = 32
     self.clickzones["bottom"].y = self.h * 32
     self.clickzones["bottom"].w = (self.w - 1) * 32
+
+    self.clickzones["diagonal"].x = self.w * 32
+    self.clickzones["diagonal"].y = self.w * 32
 end
 
 function World:init(assets, w, h)
@@ -82,6 +85,12 @@ function World:init(assets, w, h)
             w = 32,
             h = 32,
         },
+        ["diagonal"] = {
+            x = 0,
+            y = 0,
+            w = 32,
+            h = 32,
+        },
     }
     
     -- create spritebatches --
@@ -90,7 +99,6 @@ function World:init(assets, w, h)
     self.qw, self.qh = qw, qh
     createTiles(self)
     updateClickzones(self)
-
 end
 
 function World:resize()
@@ -112,9 +120,16 @@ function World:mousepressed(x, y, button)
             if collision.pointRect( { x = x, y = y }, v) then
                 if k == "right" then
                     self.w = self.w + 1
-                    createTiles(self)
-                    updateClickzones(self)
                 end
+                if k == "bottom" then
+                    self.h = self.h + 1
+                end
+                if k == "diagonal" then
+                    self.w = self.w + 1
+                    self.h = self.h + 1
+                end
+                createTiles(self)
+                updateClickzones(self)
             end
         end
     end
