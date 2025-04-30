@@ -1,0 +1,29 @@
+{ "frames": [
+   {
+    "filename": "Sprite-0011 0.",
+    "frame": { "x": 0, "y": 0, "w": 49, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 49, "h": 18 },
+    "sourceSize": { "w": 49, "h": 18 },
+    "duration": 100
+   },
+   {
+    "filename": "Sprite-0011 1.",
+    "frame": { "x": 49, "y": 0, "w": 49, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 49, "h": 18 },
+    "sourceSize": { "w": 49, "h": 18 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3-rc2-x64",
+  "image": "toggle.png",
+  "format": "RGBA8888",
+  "size": { "w": 98, "h": 18 },
+  "scale": "1"
+ }
+}
